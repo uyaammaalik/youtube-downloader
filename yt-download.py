@@ -3,15 +3,15 @@ import sys
 
 def list_formats(url):
     print("\n📄 Fetching available formats...\n")
-    subprocess.run(["yt", "-F", url])
+    subprocess.run(["yt-dlp", "-F", url])
 
 def download_best(url):
     print("\n⬇️ Downloading best video and audio...")
-    subprocess.run(["yt", "-f", "bestvideo+bestaudio", url])
+    subprocess.run(["yt-dlp", "-f", "bestvideo+bestaudio", url])
 
 def download_custom(url, video_id, audio_id):
     print(f"\n⬇️ Downloading video ({video_id}) and audio ({audio_id}) separately...")
-    subprocess.run(["yt", "-f", f"{video_id}+{audio_id}", url])
+    subprocess.run(["yt-dlp", "-f", f"{video_id}+{audio_id}", url])
 
 def main():
     print("🎯 YouTube Download Manager using yt-dlp + ffmpeg\n")
